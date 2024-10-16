@@ -5,7 +5,11 @@ const app = express();
 
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017").catch((err) => console.log(err));
+const dbUrl = process.env.MONGODB_URL;
+
+if (dbUrl) {
+  mongoose.connect(dbUrl).catch((err) => console.log(err));
+}
 
 const PORT = 3000;
 
