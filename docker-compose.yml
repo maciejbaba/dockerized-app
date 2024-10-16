@@ -1,2 +1,45 @@
-version: '3'
-# your services for the task
+services:
+  backend:
+    build: ./be
+    image: backend
+    environment:
+      - MONGODB_URL=mongodb://mongodb:27017/node-boilerplate
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongodb
+    volumes:
+      - ./be:/src
+    networks:
+      - backend-db-network
+      - frontend-backend-network
+
+  frontend:
+    build: ./fe
+    image: frontend
+    ports: 
+      - '5173:5173'
+    depends_on:
+      - backend
+    volumes:
+      - ./fe:/src
+    networks:
+      - frontend-backend-network
+
+  mongodb:
+    image: mongo:6-jammy
+    ports:
+      - '27017:27017'
+    volumes:
+      - dbdata6:/data/db
+    networks:
+      - backend-db-network
+
+volumes:
+  dbdata6:
+
+networks:
+  backend-db-network:
+    driver: bridge
+  frontend-backend-network:
+    driver: bridge

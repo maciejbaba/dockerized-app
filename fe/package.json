@@ -16,7 +16,7 @@
   "license": "MIT",
   "homepage": "https://github.com/uchihamalolan/vite-react-ts",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 0.0.0.0",
     "build": "tsc && vite build",
     "test": "jest",
     "serve": "vite preview",
