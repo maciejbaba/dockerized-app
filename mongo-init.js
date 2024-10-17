@@ -11,9 +11,9 @@ db.createUser({
   ],
 });
 
-db.createCollection("washing-machines-collection");
+db.createCollection("machines", { capped: false });
 
-db.collection.insertMany([
+db.machines.insertMany([
     {
       "image":
         "https://f00.esfr.pl/foto/5/71215465857/b7c91239dad8f45eae1abe48d24c6b3b/samsung-ww90ta046te,71215465857_8.jpg",

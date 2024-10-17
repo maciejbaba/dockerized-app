@@ -19,7 +19,7 @@ if (!dbUrl) {
 const client = new MongoClient(dbUrl);
 
 const dbName = "washing-machines-db";
-const collectionName = "collection";
+const collectionName = "machines";
 
 const PORT = 3000;
 
