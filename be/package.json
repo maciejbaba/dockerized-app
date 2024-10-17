@@ -13,11 +13,12 @@
   "dependencies": {
     "@types/express": "^5.0.0",
     "@types/mongoose": "^5.11.96",
+    "cors": "^2.8.5",
     "express": "^4.21.1",
-    "mongoose": "^8.7.1"
+    "mongodb": "^6.9.0"
   },
   "devDependencies": {
-    "@types/node": "^22.7.5",
+    "@types/node": "^22.7.6",
     "typescript": "^5.6.3"
   }
 }
