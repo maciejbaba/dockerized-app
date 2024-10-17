@@ -1,10 +1,11 @@
 FROM node:latest
 
-WORKDIR /de
-COPY package.json .
+WORKDIR /backend
+
+COPY package.json package-lock.json /backend
 RUN npm install
 
-COPY . .
+COPY . /backend
 
 EXPOSE 3000
 

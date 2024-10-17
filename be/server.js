@@ -10,7 +10,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import express from "express";
 import { MongoClient } from "mongodb";
 import cors from "cors";
-require("dotenv").config();
+import dotenv from "dotenv";
+dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors());
@@ -20,7 +21,7 @@ if (!dbUrl) {
 }
 const client = new MongoClient(dbUrl);
 const dbName = "washing-machines-db";
-const collectionName = "washing-machines-collection";
+const collectionName = "collection";
 const PORT = 3000;
 let db;
 let collection;

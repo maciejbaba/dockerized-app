@@ -1,12 +1,12 @@
 FROM node:latest
 
-WORKDIR /fe
+WORKDIR /frontend
 
-COPY package.json .
+COPY package.json package-lock.json /frontend
 
 RUN npm install
 
-COPY . .
+COPY . /frontend
 
 EXPOSE 5173
 

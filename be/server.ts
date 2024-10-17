@@ -1,7 +1,8 @@
 import express, { Request, Response } from "express";
 import { Collection, MongoClient } from "mongodb";
 import cors from "cors";
-require("dotenv").config();
+import dotenv from "dotenv"
+dotenv.config();
 
 const app = express();
 
@@ -18,7 +19,7 @@ if (!dbUrl) {
 const client = new MongoClient(dbUrl);
 
 const dbName = "washing-machines-db";
-const collectionName = "washing-machines-collection";
+const collectionName = "collection";
 
 const PORT = 3000;
 
